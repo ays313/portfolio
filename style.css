@@ -1,0 +1,168 @@
+/* Ahmad Yar - Portfolio | CSC 337 Assignment 1 */
+:root {
+  --navy: #1b2a41;
+  --blue: #2a6fdb;
+  --light: #f4f7fb;
+  --text: #222;
+  --border: #c9d3e0;
+  --gap: 1rem;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.6;
+  color: var(--text);
+  background: var(--light);
+}
+
+/* Sticky header (positioning) */
+header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: var(--navy);
+  color: #fff;
+  padding: 0.8rem 1.5rem;
+}
+
+header h1 { margin: 0 0 0.4rem; font-size: 1.5rem; }
+
+/* Flexbox navigation */
+nav ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--gap);
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+nav a {
+  color: #fff;
+  text-decoration: none;
+  padding: 0.3rem 0.8rem;
+  border-radius: 4px;
+}
+
+nav a:hover,
+nav a.active { background: var(--blue); }
+
+main {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 1.5rem;
+}
+
+section, article {
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 1rem 1.25rem;
+  margin-bottom: var(--gap);
+}
+
+h2 { color: var(--navy); margin-top: 0; }
+h3 { color: var(--blue); }
+
+img { max-width: 100%; height: auto; }
+
+footer {
+  background: var(--navy);
+  color: #fff;
+  text-align: center;
+  padding: 1rem;
+  margin-top: 2rem;
+}
+
+/* Tables */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: var(--gap) 0;
+}
+
+th, td {
+  border: 1px solid var(--border);
+  padding: 0.6rem 0.8rem;
+  text-align: left;
+}
+
+th { background: var(--navy); color: #fff; }
+tr:nth-child(even) td { background: #eef3fa; }
+tbody tr:hover td { background: #cfe0fb; }
+
+/* Grid: Favourite Media two-column layout */
+.media-grid {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: var(--gap);
+}
+
+.video-wrap { margin-bottom: var(--gap); }
+
+iframe {
+  width: 100%;
+  border: 0;
+  aspect-ratio: 16 / 9;
+}
+
+.map iframe { aspect-ratio: 16 / 10; }
+
+/* Form */
+form { display: grid; gap: 0.8rem; max-width: 520px; }
+
+label { font-weight: bold; }
+
+input[type="text"],
+input[type="email"],
+textarea {
+  width: 100%;
+  padding: 0.6rem;
+  border: 2px solid var(--border);
+  border-radius: 4px;
+  font-family: inherit;
+  font-size: 1rem;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+textarea:focus {
+  outline: none;
+  border-color: var(--blue);
+  background: #f0f6ff;
+}
+
+button {
+  background: var(--blue);
+  color: #fff;
+  border: 0;
+  padding: 0.7rem 1.2rem;
+  border-radius: 4px;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+button:hover { background: var(--navy); }
+
+/* Responsive: no horizontal scroll at 375px */
+@media (max-width: 700px) {
+  .media-grid { grid-template-columns: 1fr; }
+  header { padding: 0.6rem 1rem; }
+  main { padding: 1rem; }
+  nav ul { gap: 0.3rem; }
+  th, td { padding: 0.4rem; font-size: 0.9rem; }
+}
+
+/* Profile picture */
+.profile {
+  display: block;
+  width: 180px;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 4px solid var(--blue);
+  margin: 0 auto 1rem;
+}
